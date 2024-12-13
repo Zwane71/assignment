@@ -5,7 +5,7 @@ import Chart from 'chart.js/auto';
 
 const Graph = () => {
   return (
-    <div className='border p-5 rounded-md w-[15rem] md:w-[30rem] lg:w-[40rem]'>
+    <div className='border p-5 rounded-md w-[30rem] lg:w-[40rem]'>
     <div className='flex justify-between'>
         <div>
             <h1 className='font-semibold text-lg'>Comparison Graph</h1>

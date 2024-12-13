@@ -7,21 +7,21 @@ import React from 'react'
 
 const SkillPage = () => {
   return (
-    <div className=' p-2 md:p-10 md:mx-10'>
+    <div className=' mx-10 p-2 md:p-10 md:mx-10'>
       <header className='mb-6'>
         <h1 className='text-xl'>Skill Test</h1>
       </header>
       
-      <section className='flex mt-4 flex-col lg:flex-row lg:space-x-10'>
-        <div className='lg:space-y-10' >
+      <section className='flex mt-4 flex-col lg:flex-row lg:space-x-10 lg:space-y-10'>
+        <div className='space-y-10 ' >
           
-            <UpdateDiv />
+            <UpdateDiv  />
           <QuickStatistic />
           <Graph />
            
         </div>
         
-        <div className='lg:space-y-10' >
+        <div className='space-y-10' >
           <SkillWise />
           <QuestionDiv />
         </div>

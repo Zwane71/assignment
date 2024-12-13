@@ -14,15 +14,15 @@ const getLinkStyle = (pathname: string, linkPath: string) => {
     : 'text-[#54585e] md:pl-4 lg:pl-8';
 }
 
-const Sideview = ({ toggleSidebar, isSidebarOpen }: { toggleSidebar: () => void, isSidebarOpen: boolean }) => {
+const SideNav = () => {
   const pathname = usePathname();
 
   return (
     <div>
      
            <div 
-        className={`border-r p-3 w-40 md:w-40 lg:w-60 h-screen transition-transform ease-in-out 
-        ${isSidebarOpen ? 'block' : 'hidden md:block'} lg:block`}
+           className='border-r p-3 w-40 md:w-40 lg:w-60 h-screen'
+        
       >
         <div>
           <ul className='pt-5 font-bold text-base md:text-md gap-2 md:gap-5 flex flex-col mt-28'>
@@ -70,4 +70,4 @@ const Sideview = ({ toggleSidebar, isSidebarOpen }: { toggleSidebar: () => void,
   )
 }
 
-export default Sideview;
+export default SideNav;

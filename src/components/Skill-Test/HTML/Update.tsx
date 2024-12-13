@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const UpdateDiv = () => {
   return (
-    <div className='border rounded-md p-6 w-[15rem] md:w-[30rem] lg:w-[40rem]'>
+    <div className='border rounded-md p-6 w-[18rem] sm:w-[30rem] md:w-[30rem] lg:w-[40rem]'>
         <div className='flex justify-evenly gap-5 flex-col md:flex-row'>
             <div>
                 
