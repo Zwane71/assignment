@@ -1,9 +1,7 @@
 'use client'
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
-import Sideview from "@/components/sideview/Sideview";
 import SideNav from "@/components/sideview/SideNav";
 import { useState } from "react";
 import UpdateForm from "@/components/updateform/UpdateForm";
@@ -24,7 +22,6 @@ const geistMono = Geist_Mono({
 
 export default function RootLayout({
   children,
-  modals,
 }: Readonly<{
   children: React.ReactNode;
   modals: React.ReactNode;

@@ -2,7 +2,7 @@
 import { useFormData } from '@/app/context/FormContext'
 import React from 'react'
 import { Doughnut } from 'react-chartjs-2';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, TooltipItem } from 'chart.js'
 
 ChartJS.register(
     ArcElement, 
@@ -13,13 +13,15 @@ ChartJS.register(
 const QuestionDiv = () => {
   const { formData } = useFormData(); 
 
-  
+  // Ensure currentScore is treated as a number
+  const currentScore = formData?.currentScore ?? 0;  
+
   const data = {
     labels: ['Correct Answers', 'Incorrect Answers'], 
     datasets: [
       {
         label: 'Question Analysis',
-        data: [formData.currentScore, 15 - formData.currentScore], 
+        data: [currentScore, 15 - currentScore], 
         backgroundColor: ['#3b7df5', '#4CAF50'], 
         hoverBackgroundColor: ['#66BB6A', '#FF7043'], 
       },
@@ -35,7 +37,7 @@ const QuestionDiv = () => {
       },
       tooltip: {
         callbacks: {
-          label: function (context: any) {
+          label: function (context: TooltipItem<'doughnut'>) {
             return `${context.raw} Answers`;
           },
         },
@@ -52,7 +54,7 @@ const QuestionDiv = () => {
       <div>
         <p className='text-gray-500'>
           <span className='font-bold'>
-            You scored {formData.currentScore} Questions correct out of 15.
+            You scored {currentScore} Questions correct out of 15.
           </span>
           However, it still <br /> needs some improvement.
         </p>

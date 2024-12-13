@@ -13,8 +13,13 @@ const getLinkStyle = (pathname: string, linkPath: string) => {
     ? 'border border-[#f4f6f8] bg-[#f4f6f8] text-[#5764ad] p-2 lg:p-5 bg-opacity-40 rounded-r-full' 
     : 'text-[#54585e] md:pl-4 lg:pl-8';
 }
+interface SideviewProps {
+  toggleSidebar: () => void;
+  isSidebarOpen: boolean;
+}
 
-const Sideview = ({ toggleSidebar, isSidebarOpen }: { toggleSidebar: () => void, isSidebarOpen: boolean }) => {
+const Sideview: React.FC<SideviewProps> = ({ toggleSidebar, isSidebarOpen }) => {
+ 
   const pathname = usePathname();
 
   return (
