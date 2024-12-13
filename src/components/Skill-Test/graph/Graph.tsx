@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import { useFormData } from '@/app/context/FormContext';
 import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js'
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, TooltipItem } from 'chart.js'
 
 ChartJS.register(
     CategoryScale, 
@@ -18,7 +18,6 @@ ChartJS.register(
 const Graph = () => {
     const { formData } = useFormData(); 
 
-   
     const data = {
         labels: ['Assessment 1', 'Assessment 2', 'Assessment 3', 'Assessment 4', 'Your Score'], 
         datasets: [
@@ -54,7 +53,7 @@ const Graph = () => {
             },
             tooltip: {
                 callbacks: {
-                    label: function (context: any) {
+                    label: function (context: TooltipItem<'line'>) {
                         return `${context.raw}%`; 
                     },
                 },
