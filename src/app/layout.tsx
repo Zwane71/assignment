@@ -7,6 +7,8 @@ import Sideview from "@/components/sideview/Sideview";
 import SideNav from "@/components/sideview/SideNav";
 import { useState } from "react";
 import UpdateForm from "@/components/updateform/UpdateForm";
+import { FormDataProvider } from "./context/FormContext";
+
 
 
 const geistSans = Geist({
@@ -32,7 +34,9 @@ export default function RootLayout({
     setShowModal(!showModal);
   }
   return (
-    <html lang="en">
+  
+    <FormDataProvider>
+       <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -44,7 +48,9 @@ export default function RootLayout({
         <div className="hidden md:block">
         <SideNav />
         </div>
+          <div className=" overlay translate ">
           {children}
+          </div>
           {showModal && <UpdateForm handleShowModal={handleShowModal}/>}
           
         </div> 
@@ -52,5 +58,7 @@ export default function RootLayout({
        </div>
       </body>
     </html>
+    </FormDataProvider>
+
   );
 }
