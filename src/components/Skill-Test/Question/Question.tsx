@@ -13,15 +13,19 @@ ChartJS.register(
 const QuestionDiv = () => {
   const { formData } = useFormData(); 
 
-  // Ensure currentScore is treated as a number
-  const currentScore = formData?.currentScore ?? 0;  
+  // Ensure currentScore is treated as a number, with a fallback value of 0
+  const currentScore = formData?.currentScore ?? 0;
+
+  // Make sure currentScore is a valid number
+  const correctAnswers = currentScore;
+  const incorrectAnswers = 15 - correctAnswers;
 
   const data = {
     labels: ['Correct Answers', 'Incorrect Answers'], 
     datasets: [
       {
         label: 'Question Analysis',
-        data: [currentScore, 15 - currentScore], 
+        data: [correctAnswers, incorrectAnswers], 
         backgroundColor: ['#3b7df5', '#4CAF50'], 
         hoverBackgroundColor: ['#66BB6A', '#FF7043'], 
       },
