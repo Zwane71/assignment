@@ -18,7 +18,7 @@ interface SideviewProps {
   isSidebarOpen: boolean;
 }
 
-const Sideview: React.FC<SideviewProps> = ({ toggleSidebar, isSidebarOpen }) => {
+const Sideview: React.FC<SideviewProps> = ({ isSidebarOpen }) => {
  
   const pathname = usePathname();
 

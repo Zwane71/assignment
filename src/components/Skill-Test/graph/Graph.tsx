@@ -1,7 +1,6 @@
 'use client'
 import Image from 'next/image'
 import React from 'react'
-import Chart from 'chart.js/auto';
 import { useFormData } from '@/app/context/FormContext';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js'
