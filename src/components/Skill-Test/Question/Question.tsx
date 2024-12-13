@@ -14,7 +14,7 @@ const QuestionDiv = () => {
   const { formData } = useFormData(); 
 
   // Ensure currentScore is treated as a number, with a fallback value of 0
-  const currentScore = formData?.currentScore ?? 0;
+  const currentScore = Number(formData?.currentScore ?? 0); 
 
   // Make sure currentScore is a valid number
   const correctAnswers = currentScore;

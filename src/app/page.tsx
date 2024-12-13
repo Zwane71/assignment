@@ -1,4 +1,4 @@
-import FormList from "@/components/updateform/FormList";
+
 import { FormDataProvider } from "./context/FormContext";
 
 export default function Home() {
@@ -6,7 +6,7 @@ export default function Home() {
    <FormDataProvider>
      <div>
       <main>
-       <FormList />
+      
       </main>
     </div>
    </FormDataProvider>

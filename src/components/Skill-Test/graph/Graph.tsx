@@ -42,7 +42,10 @@ const Graph = () => {
                 max: 100, 
                 ticks: {
                     stepSize: 10,
-                    callback: (value: number) => `${value}%`, 
+                    callback: (tickValue: number | string) => {
+                        // Ensure tickValue is treated as a number and return the correct format
+                        return `${tickValue}%`;
+                    },
                 },
             },
         },

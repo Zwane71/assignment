@@ -1,6 +1,20 @@
 import React from 'react';
 
-export default function ProgressBar({ label, progress, trackColor, progressColor, textColor }) {
+interface ProgressBarProps {
+  label: string;
+  progress: number;
+  trackColor: string;
+  progressColor: string;
+  textColor: string;
+}
+
+export default function ProgressBar({
+  label,
+  progress,
+  trackColor,
+  progressColor,
+  textColor,
+}: ProgressBarProps) {
   return (
     <li className='space-y-3'>
       <span className='text-gray-500'>{label}</span>
