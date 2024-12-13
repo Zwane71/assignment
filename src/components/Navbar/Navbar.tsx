@@ -1,10 +1,13 @@
 'use client'
 import React, { useState } from 'react';
 import Sideview from '../sideview/Sideview';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 const Navbar = ({handleShowModal} : {handleShowModal : () => void}) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
+  const pathname = usePathname();
   const toggleSidebar = () => setSidebarOpen(!isSidebarOpen); 
   return (
     <div>
@@ -22,14 +25,19 @@ const Navbar = ({handleShowModal} : {handleShowModal : () => void}) => {
               Rahil Saddique
             </li>
             
+            <li className='gap-2 flex'>
             
-            <li className="md:hidden p-4 cursor-pointer" onClick={toggleSidebar}>
-              ☰ 
-            </li>
-            <li>
+            <Link href={''} className={`link${pathname ===  '/skill' ? 'flex ' : ' hidden'}`} >
             <button onClick={handleShowModal}  className='border-4 w-24 h-12 text-center border-blue-950 bg-blue-950 text-white px-4 py-2 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500'>
                       Update
               </button>
+            </Link>
+            
+              <div className="md:hidden border h-12  rounded-md p-4 cursor-pointer" onClick={toggleSidebar}>
+              <div className='flex text-center justify-center items-center'>
+              ☰ 
+              </div>
+            </div>
             </li>
           </ul>
 

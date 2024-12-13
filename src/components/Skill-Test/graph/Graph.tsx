@@ -78,7 +78,7 @@ const Graph = () => {
                     </p>    
                 </div>    
                 <div className='bg-[#f4f6f8] w-16 h-16 rounded-full flex justify-center items-center'>
-                    <Image src='/growth.png' alt='Trophy icon' width={30} height={30} />
+                    <Image src='/growth.png' alt='Trophy icon' width={40} height={40} className='bg-[#f4f6f8] p-1 rounded-full'  />
                 </div>
             </div>
             <div>
